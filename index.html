@@ -1,4 +1,21 @@
-<title>ARIKE</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARIKE: Self-Care App for Stress and Overwhelm</title>
+<meta name="description" content="ARIKE is a self-care app that helps you check in with yourself, understand what might help, and find one manageable thing to try: breathing, journaling, movement or a mindful moment.">
+<meta name="theme-color" content="#3B82F6">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ARIKE">
+<meta property="og:title" content="ARIKE: Self-Care App for Stress and Overwhelm">
+<meta property="og:description" content="ARIKE is a self-care app that helps you check in with yourself, understand what might help, and find one manageable thing to try: breathing, journaling, movement or a mindful moment.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARIKE: Self-Care App for Stress and Overwhelm">
+<meta name="twitter:description" content="ARIKE is a self-care app that helps you check in with yourself, understand what might help, and find one manageable thing to try: breathing, journaling, movement or a mindful moment.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "ARIKE", "slogan": "A space to care for yourself.", "email": "support@helloarike.com"}, {"@type": "WebSite", "name": "ARIKE", "description": "ARIKE is a self-care app that helps you check in with yourself, understand what might help, and find one manageable thing to try: breathing, journaling, movement or a mindful moment."}]}</script>
+</head>
+<body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
@@ -412,6 +429,61 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
 .fx-rec li{animation:fxin .5s both}.fx-rec li:nth-child(2){animation-delay:.25s}.fx-rec li:nth-child(3){animation-delay:.5s}
 @media (prefers-reduced-motion:reduce){.fx-in,.fx-o,.fx-rec li,.fx-ico{animation:none!important}.fx-o.pick{border-color:#3B82F6;background:#EFF6FF}.fx-n,.fx-bar u{transition:none}}
 @media (max-width:860px){.fx{grid-template-columns:1fr}.fx-needs{display:flex;overflow-x:auto;padding:16px 16px 4px;gap:8px;scrollbar-width:none}.fx-n{flex:none;padding:10px 14px;font-size:14px}.fx-n.on{transform:none}.fx-stage{margin:12px;padding:18px;min-height:340px}.fx-steps{gap:12px}}
+
+/* ---- simple auth ---- */
+.auth.simple{background:linear-gradient(180deg,var(--chip),var(--bg) 60%);padding:40px 16px}
+.auth.simple .auth-card{box-shadow:0 24px 50px -34px rgba(15,23,42,.35);gap:16px;padding:32px 28px}
+.auth.simple .auth-card h1{font-size:28px}
+.auth.simple .auth-card .sub{font-size:15px}
+.auth.simple .alt-line{margin-top:2px}
+/* ---- mobile polish ---- */
+.field input{font-size:16px;min-height:48px}
+.btn{min-height:46px}
+@media (max-width:620px){
+  .grid-auto.snap{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-16px;padding:2px 16px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .grid-auto.snap::-webkit-scrollbar{display:none}
+  .grid-auto.snap>.card{flex:0 0 78%;scroll-snap-align:center}
+  .hero .btn,.split .btn{flex:1 1 auto}
+  .auth.simple{padding:24px 16px;align-items:start}
+  .auth.simple .auth-card{padding:26px 20px}
+  h2.h2{font-size:clamp(28px,8vw,36px)}
+}
+@media (max-width:380px){.hero h1{font-size:34px}.btn{padding:12px 16px}}
+/* ---- motion ---- */
+.top{transition:box-shadow .3s,background .3s}.top.stuck{box-shadow:0 8px 24px -16px rgba(15,23,42,.35)}
+.view.on{animation:vin .55s ease both}
+@keyframes vin{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
+.rv{opacity:0;translate:0 28px;transition:opacity .8s cubic-bezier(.2,.7,.2,1),translate .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;translate:0 0}
+.rv.zoom{scale:.94}.rv.zoom.in{scale:1}
+.hero .wrap>*:first-child>*{animation:vin .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .wrap>*:first-child>*:nth-child(2){animation-delay:.1s}.hero .wrap>*:first-child>*:nth-child(3){animation-delay:.2s}.hero .wrap>*:first-child>*:nth-child(4){animation-delay:.3s}.hero .wrap>*:first-child>*:nth-child(5){animation-delay:.4s}.hero .wrap>*:first-child>*:nth-child(6){animation-delay:.5s}
+.blob{animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1) rotate(0)}to{transform:translate(14px,-12px) scale(1.06) rotate(6deg)}}
+.hero .btn:not(.ghost):not(.sec){position:relative}
+.hero .btn:not(.ghost):not(.sec)::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 color-mix(in srgb,var(--blue) 45%,transparent);animation:ring 2.8s ease-out infinite;pointer-events:none}
+@keyframes ring{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--blue) 45%,transparent)}70%,100%{box-shadow:0 0 0 14px transparent}}
+.btn{transition:transform .2s,box-shadow .2s,background .2s}.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0)}
+.btn svg{transition:transform .2s}.btn:hover svg{transform:translateX(3px)}
+.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+@media (hover:hover){.card:hover{transform:translateY(-6px);box-shadow:0 26px 44px -30px rgba(15,23,42,.45)}}
+.card .sc{overflow:hidden}.card .sc img,.card .sc svg{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+@media (hover:hover){.card:hover .sc img,.card:hover .sc svg{transform:scale(1.05)}}
+.wscr svg{animation:bob 4.5s ease-in-out infinite}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.logo .i svg{animation:sway 4s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes sway{0%,100%{rotate:0deg}50%{rotate:8deg}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;translate:none;transition:none}.view.on,.blob,.wscr svg,.logo .i svg,.hero .wrap>*:first-child>*,.hero .btn::after{animation:none!important}}
+
+.legal-page{padding-block:48px 96px}
+.legal-page .wrap{max-width:760px}
+.legal-page .back-link{display:inline-block;margin-bottom:24px;color:var(--link);font-weight:600;text-decoration:none}
+.legal-page h1{font-size:clamp(32px,6vw,48px);font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
+.legal-page h2{font-size:22px;margin:36px 0 10px}
+.legal-page p,.legal-page li{font-size:17px;line-height:1.7;color:var(--fg);opacity:.9}
+.legal-page p{margin:0 0 14px}
+.legal-page ul{margin:0 0 14px;padding-left:22px;display:grid;gap:6px}
+.legal-page a:not(.back-link){color:var(--link);text-underline-offset:3px}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -719,6 +791,134 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
 </div>
 
 <!-- ============ PAGE 4: ABOUT ============ -->
+<div class="view" id="v-privacy">
+<section class="legal-page"><div class="wrap">
+<a class="back-link" href="#home">&larr; Back to ARIKE</a>
+<h1>Privacy Policy</h1>
+<p><strong>Last updated: 9 October 2026</strong></p>
+<p>At ARIKE, we believe caring for yourself should feel safe, personal, and simple. That includes how we handle your information.</p>
+<p>This Privacy Policy explains what information we collect, why we collect it, how we use it, and the choices you have when using ARIKE.</p>
+<h2>1. The information we collect</h2>
+<p>We collect only the information we need to provide and improve your experience.</p>
+<p><strong>Information you share with us</strong></p>
+<p>This may include your name, email address, account details, wellbeing check-ins, activity preferences, journal entries you choose to share, and feedback about the activities you try.</p>
+<p>Some of this information may be personal or sensitive. You are in control of what you choose to share with ARIKE.</p>
+<p><strong>Information collected as you use ARIKE</strong></p>
+<p>We may collect information about how you interact with the platform, such as activities you view, save, complete, skip, or rate. We may also collect basic technical information needed to keep ARIKE secure and working properly.</p>
+<h2>2. How we use your information</h2>
+<p>We use your information to:</p>
+<ul>
+<li>Help you find activities that match your current needs and preferences.</li>
+<li>Personalise recommendations based on your choices and feedback.</li>
+<li>Remember activities you save to your personal toolkit.</li>
+<li>Maintain, troubleshoot, and improve ARIKE.</li>
+<li>Protect the platform against misuse and security threats.</li>
+<li>Respond when you contact us for support.</li>
+<li>Meet applicable legal requirements.</li>
+</ul>
+<p>We do not want you to share more than you are comfortable sharing. You can use ARIKE to explore everyday wellbeing without telling us everything about your life.</p>
+<h2>3. How AI is used</h2>
+<p>ARIKE may use artificial intelligence, including third-party AI services, to understand your check-ins, generate reflective prompts, and recommend relevant activities.</p>
+<p>When these services are used, relevant information may be processed by the providers supporting those features. We aim to limit the information shared to what is reasonably needed for the feature to work.</p>
+<p>AI responses are not always accurate or suitable for every situation. Please avoid sharing information you would not want processed by the services supporting ARIKE.</p>
+<p>We will explain any important changes to how AI is used in the product or how your information is handled.</p>
+<h2>4. When we share information</h2>
+<p>We do not sell your personal information.</p>
+<p>We may share information with trusted service providers that help us operate ARIKE, such as hosting, authentication, analytics, customer support, and AI providers. They should only access information needed to provide their services and are subject to appropriate safeguards.</p>
+<p>We may also disclose information when necessary to meet legal obligations, protect the safety of users, or address security issues.</p>
+<p>Where possible, we aim to use aggregated or de-identified information to understand how ARIKE is performing without identifying individual users.</p>
+<h2>5. How we protect your information</h2>
+<p>We use reasonable technical and organisational measures to protect your information from unauthorised access, loss, misuse, or disclosure.</p>
+<p>No online service can guarantee complete security. We continue to review our practices and work to protect the trust you place in us.</p>
+<h2>6. How long we keep your information</h2>
+<p>We keep information for as long as it is needed to provide ARIKE, maintain your account, meet legitimate operational needs, or comply with applicable requirements.</p>
+<p>If you delete your account or request deletion of your information, we will take appropriate steps to remove it, subject to information we may need to retain for legitimate or legal reasons. Some information may remain in backups for a limited period.</p>
+<h2>7. Your choices and rights</h2>
+<p>You can choose what information you share with ARIKE. Depending on where you live and the laws that apply, you may also be able to:</p>
+<ul>
+<li>Ask to access the personal information we hold about you.</li>
+<li>Request corrections to inaccurate information.</li>
+<li>Request deletion of your information.</li>
+<li>Withdraw consent where processing relies on consent.</li>
+<li>Object to or restrict certain uses of your information.</li>
+<li>Ask questions about how your information is handled.</li>
+</ul>
+<p>To make a request, contact us at <strong><a href="mailto:support@helloarike.com">support@helloarike.com</a></strong>.</p>
+<h2>8. Cookies and similar technologies</h2>
+<p>ARIKE may use cookies or similar technologies to keep you signed in, remember preferences, understand how the platform is used, and maintain security. Where required, we will ask for your consent before using non-essential cookies.</p>
+<h2>9. Children's privacy</h2>
+<p>ARIKE is designed for everyday wellbeing. We will clearly communicate the age requirements for using the platform. If a feature is intended for adults only, children should not use it.</p>
+<p>If we learn that we have collected a child's personal information in a way that is not permitted, we will take appropriate steps to address it.</p>
+<h2>10. Where your information is processed</h2>
+<p>ARIKE and its service providers may process information in countries other than your own. Where this happens, we aim to use appropriate safeguards and follow the privacy requirements that apply.</p>
+<h2>11. Changes to this policy</h2>
+<p>As ARIKE grows, our services and practices may change. If we make meaningful changes to this policy, we will update the date above and provide notice where appropriate.</p>
+<h2>12. Let's talk</h2>
+<p>Privacy should never feel confusing. If you have a question about your information or this policy, contact us at:</p>
+<p><strong>Email:</strong> <a href="mailto:support@helloarike.com">support@helloarike.com</a></p>
+<p>Thank you for trusting ARIKE with a part of your wellbeing journey.</p>
+</div></section>
+</div>
+<div class="view" id="v-terms">
+<section class="legal-page"><div class="wrap">
+<a class="back-link" href="#home">&larr; Back to ARIKE</a>
+<h1>Terms of Use</h1>
+<p><strong>Last updated: 9 October 2026</strong></p>
+<p>Welcome to ARIKE — a space to care for yourself.</p>
+<p>These Terms explain how you can use ARIKE and what you can expect from us. We have kept them straightforward because using a wellbeing platform should not require you to work through complicated language.</p>
+<p>By using ARIKE, you agree to these Terms. If you do not agree, please do not use the platform.</p>
+<h2>1. What ARIKE is</h2>
+<p>ARIKE is an everyday wellbeing platform that helps you check in with yourself, explore what you might need, and discover manageable activities to try.</p>
+<p>These activities may include journaling, reflection, breathing exercises, grounding, movement, creative activities, and ways to connect with people you trust.</p>
+<p>ARIKE is designed to support everyday self-care. It is not a medical service, therapy service, or emergency support service.</p>
+<h2>2. What ARIKE is not</h2>
+<p>ARIKE does not diagnose health conditions, provide medical treatment, or replace a qualified healthcare professional, counsellor, or therapist.</p>
+<p>Our activities and AI-generated suggestions are intended to support general wellbeing. They may not be suitable for every person or situation, and we cannot promise that every activity will help.</p>
+<p>You are encouraged to seek qualified professional support when you need it. If you are in immediate danger or need urgent help, contact local emergency services or a trusted person who can help you access appropriate support.</p>
+<h2>3. Using ARIKE</h2>
+<p>We ask that you use ARIKE respectfully and honestly.</p>
+<p>When creating an account, provide accurate information and keep your login details secure. You are responsible for activity carried out through your account, except where applicable law says otherwise.</p>
+<p>Please do not use ARIKE to:</p>
+<ul>
+<li>Break the law or violate another person's rights.</li>
+<li>Interfere with the platform's security or normal operation.</li>
+<li>Attempt to access another person's account or information.</li>
+<li>Misuse the platform, its content, or its AI features.</li>
+</ul>
+<p>We may limit or suspend access when necessary to protect users, maintain security, or address serious misuse.</p>
+<h2>4. AI-generated content</h2>
+<p>ARIKE may use AI to help personalise activities, generate prompts, or respond to information you provide.</p>
+<p>AI can misunderstand context, miss important details, or offer suggestions that do not fit your circumstances. Treat AI-generated content as a starting point, not a definitive answer about your wellbeing or what you should do.</p>
+<p>You can skip an activity, stop at any time, or choose another option. You do not need to complete a recommendation simply because ARIKE suggests it.</p>
+<h2>5. Your content and information</h2>
+<p>You remain responsible for the information, reflections, and other content you choose to submit to ARIKE.</p>
+<p>You retain your rights to content you create, subject to any rights you grant us to operate the service. You give ARIKE permission to process that content as reasonably necessary to provide the features you use, maintain the platform, and improve the service in ways consistent with our Privacy Policy and applicable law.</p>
+<p>We will not claim ownership of your personal journal entries simply because you save them on ARIKE.</p>
+<p>Please review our Privacy Policy to understand how information you share may be processed by ARIKE and its service providers.</p>
+<h2>6. ARIKE's content and brand</h2>
+<p>ARIKE's name, branding, design, original activities, written content, and platform features may be protected by intellectual property laws.</p>
+<p>You may use ARIKE for personal, non-commercial wellbeing purposes. Please do not copy, resell, republish, or commercially exploit our content or brand without permission, unless applicable law allows it.</p>
+<p>If you share feedback or suggestions with us, we may use them to improve ARIKE without being required to compensate you, provided we respect any applicable rights and privacy obligations.</p>
+<h2>7. Availability and changes</h2>
+<p>We will do our best to keep ARIKE useful and available, but we cannot promise uninterrupted access at all times.</p>
+<p>We may update, add, change, or discontinue features as the product evolves. Where a significant change affects users, we will aim to communicate it appropriately.</p>
+<h2>8. Your account and leaving ARIKE</h2>
+<p>You can stop using ARIKE whenever you choose. If account deletion is available, you can use the relevant account settings or contact us for help.</p>
+<p>Some information may need to be retained for legitimate operational, security, or legal reasons, as explained in our Privacy Policy.</p>
+<p>We may suspend or close accounts that seriously breach these Terms or create risks for the platform or other users. Where appropriate, we will provide an explanation.</p>
+<h2>9. Responsibility and limitations</h2>
+<p>We work to make ARIKE helpful, reliable, and safe. However, we cannot guarantee that the platform will always be available, error-free, or suitable for every individual need.</p>
+<p>To the extent permitted by applicable law, ARIKE is not responsible for losses arising from your inability to access the service or your reliance on AI-generated suggestions. Nothing in these Terms removes rights or responsibilities that cannot legally be excluded or limited.</p>
+<p>Please use your judgement, stop any activity that makes you uncomfortable, and seek appropriate professional guidance when needed.</p>
+<h2>10. Changes to these Terms</h2>
+<p>We may update these Terms as ARIKE develops. When changes are significant, we will take reasonable steps to let you know. The updated version will include a new revision date.</p>
+<p>Continuing to use ARIKE after updated Terms take effect means you accept them, where this is permitted by applicable law. If you do not agree, you should stop using the platform.</p>
+<h2>11. Contact us</h2>
+<p>Have a question, concern, or suggestion? We would like to hear from you.</p>
+<p><strong>Email:</strong> <a href="mailto:support@helloarike.com">support@helloarike.com</a></p>
+<p>ARIKE exists to make everyday self-care feel more approachable. Thank you for being part of it.</p>
+</div></section>
+</div>
 <div class="view" id="v-about">
 <section class="hero">
   <div class="wrap">
@@ -803,8 +1003,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
 
 <!-- ============ LOG IN ============ -->
 <div class="view" id="v-login">
-<section class="auth" style="padding-block:48px">
-  <div class="shape" aria-hidden="true"><svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice"><path d="M700 -20C900 80 1100 40 1230 180V-20z" fill="var(--s-a)"/><path d="M-30 520C150 460 260 620 420 700 520 750 560 800 560 820H-30z" fill="var(--s-a)" opacity=".7"/><path d="M820 820C900 700 1040 640 1230 660V820z" fill="var(--s-b)" opacity=".35"/></svg></div>
+<section class="auth simple">
   <div class="auth-card">
     <a class="logo" href="#home" aria-label="ARIKE home"><b>AR<span class="i">I<svg style="color:var(--teal)" aria-hidden="true"><use href="#i-sprout"/></svg></span>KE</b></a>
     <h1>Welcome back.</h1>
@@ -827,13 +1026,11 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
 
 <!-- ============ SIGN UP ============ -->
 <div class="view" id="v-signup">
-<section class="auth" style="padding-block:48px">
-  <div class="shape" aria-hidden="true"><svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice"><path d="M700 -20C900 80 1100 40 1230 180V-20z" fill="var(--s-a)"/><path d="M-30 520C150 460 260 620 420 700 520 750 560 800 560 820H-30z" fill="var(--s-a)" opacity=".7"/><path d="M820 820C900 700 1040 640 1230 660V820z" fill="var(--s-b)" opacity=".35"/></svg></div>
+<section class="auth simple">
   <div class="auth-card">
     <a class="logo" href="#home" aria-label="ARIKE home"><b>AR<span class="i">I<svg style="color:var(--teal)" aria-hidden="true"><use href="#i-sprout"/></svg></span>KE</b></a>
     <h1>Make a little space for yourself.</h1>
     <p class="sub">Create your ARIKE account and get a more personal experience based on what you need and what works for you.</p>
-    <div class="auth-path sc" data-scene="authpath" style="border-radius:0"></div>
     <form id="signupForm" novalidate>
       <div style="display:grid;gap:16px">
         <div class="field"><label for="sName">First name</label><input id="sName" type="text" autocomplete="given-name" placeholder="Enter your first name"><span class="err" id="sNameE" role="alert"></span></div>
@@ -846,7 +1043,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
     <div class="divider">Or continue with</div>
     <button class="btn google block" type="button" data-soon="Google sign-in isn't connected in this design preview."><span class="g" aria-hidden="true"><i></i></span>Continue with Google</button>
     <p class="alt-line">Already have an account? <a href="#login">Log in</a></p>
-    <p class="legal">By creating an account, you agree to ARIKE's <button class="linkbtn" type="button" data-soon="Terms of Service aren't part of this design preview yet.">Terms of Service</button> and <button class="linkbtn" type="button" data-soon="Privacy Policy isn't part of this design preview yet.">Privacy Policy</button>.</p>
+    <p class="legal">By creating an account, you agree to ARIKE's <a class="linkbtn" href="#terms">Terms of Service</a> and <a class="linkbtn" href="#privacy">Privacy Policy</a>.</p>
   </div>
 </section>
 </div>
@@ -860,7 +1057,7 @@ footer{padding-block:56px 40px;border-top:1px solid var(--line)}
         <p>A space to care for yourself.</p>
       </div>
       <div><h4>Product</h4><ul><li><a href="#calm">Find Your Calm</a></li><li><a href="#mindful">Mindful Moments</a></li></ul></div>
-      <div><h4>About</h4><ul><li><a href="#about">About</a></li><li><button class="linkbtn" data-soon="Privacy Policy isn't part of this design preview yet.">Privacy Policy</button></li><li><button class="linkbtn" data-soon="Terms of Service aren't part of this design preview yet.">Terms of Service</button></li><li><button class="linkbtn" data-soon="Help &amp; Support isn't part of this design preview yet.">Help &amp; Support</button></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="#about">About</a></li><li><a class="linkbtn" href="#privacy">Privacy Policy</a></li><li><a class="linkbtn" href="#terms">Terms of Service</a></li><li><a class="linkbtn" href="mailto:support@helloarike.com">Help &amp; Support</a></li></ul></div>
     </div>
     <div class="copy"><span>© 2026 ARIKE. All rights reserved.</span><span>ARIKE is not a therapist, a diagnostic tool or a replacement for professional care.</span></div>
   </div>
@@ -1094,14 +1291,15 @@ demo.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)r
 draw();
 
 /* routing: one view per page, each with its own hash URL */
-const ROUTES=['home','calm','mindful','about','login','signup'];
-const TITLES={home:'ARIKE',calm:'Find Your Calm | ARIKE',mindful:'Mindful Moments | ARIKE',about:'About | ARIKE',login:'Log in | ARIKE',signup:'Sign up | ARIKE'};
+const ROUTES=['home','calm','mindful','about','login','signup','privacy','terms'];
+const TITLES={home:'ARIKE: Self-Care App for Stress and Overwhelm',calm:'Quick Stress Relief for Overwhelm | ARIKE',mindful:'Mindful Moments: Short Guided Exercises | ARIKE',about:'About ARIKE: Everyday Self-Care and Wellbeing',login:'Log in | ARIKE',signup:'Sign up | ARIKE',privacy:'Privacy Policy | ARIKE',terms:'Terms of Use | ARIKE'};
+const DESCS={home:"ARIKE is a self-care app that helps you check in with yourself, understand what might help, and find one manageable thing to try: breathing, journaling, movement or a mindful moment.",calm:"Feeling overwhelmed, stressed or stuck in your head? Find quick stress relief that fits your day: short breathing, journaling, grounding and movement activities, matched to how you feel.",mindful:"Mindful moments in 2 to 5 minutes. Pause, notice, breathe, reflect, move or listen with short guided exercises that fit into a busy day.",about:"ARIKE is built for everyday emotional wellbeing: simple, personal self-care you can fit into real life. Learn what we believe and how ARIKE works.",login:"Log in to ARIKE.",signup:"Create your ARIKE account for a more personal self-care experience.",privacy:"How ARIKE collects, uses and protects your information.",terms:"The terms for using ARIKE."};
 let pendingScroll=null;
 function scrollToId(id){const el=document.getElementById(id);if(el){const y=el.getBoundingClientRect().top+window.scrollY-76;window.scrollTo({top:y,behavior:'smooth'})}}
 function route(){let r=(location.hash||'#home').slice(1);if(!ROUTES.includes(r))r='home';
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+r));
   document.querySelectorAll('nav.links a').forEach(a=>{if(a.dataset.route===r)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-  try{document.title=TITLES[r]}catch(e){}
+  try{document.title=TITLES[r];const m=document.querySelector('meta[name=description]');if(m)m.setAttribute('content',DESCS[r])}catch(e){}
   document.getElementById('nav').classList.remove('open');document.getElementById('menuBtn').setAttribute('aria-expanded','false');
   if(pendingScroll){const id=pendingScroll;pendingScroll=null;setTimeout(()=>scrollToId(id),60)}else window.scrollTo(0,0)}
 window.addEventListener('hashchange',route);route();
@@ -1128,4 +1326,16 @@ document.getElementById('signupForm').addEventListener('submit',e=>{e.preventDef
   const c=setErr('sPwE',document.getElementById('sPw').value.length>=8?'':'Use at least 8 characters.');
   const s=document.getElementById('signupStatus');if(a&&b&&c){s.hidden=false;s.textContent="This is a design preview, so no account was created. Nothing was sent."}else s.hidden=true});
 })();
+
+(()=>{const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hdr=document.querySelector('header.top');if(hdr)addEventListener('scroll',()=>hdr.classList.toggle('stuck',scrollY>8),{passive:true});
+document.querySelectorAll('.grid-auto').forEach(g=>{if(g.children.length>=4&&g.id!=='needGrid')g.classList.add('snap')});
+if(rm||!('IntersectionObserver' in window))return;
+const sel=['section .head','section .wrap>.split>*','.grid-auto>*','.orbit>*','.day>*','.fgrid>*','.pair','.collage>*','.people>*','.beliefs>*','.steps>*','.fx','.ways','.phone-col','.float-card','.toolkit','section .wrap>p','section .wrap>.btn'].join(',');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;io.unobserve(t);t.classList.add('in');setTimeout(()=>t.classList.remove('rv','in','zoom'),1500)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.view').forEach(v=>{const seen=new Set();v.querySelectorAll(sel).forEach(el=>{if(el.closest('.hero')||el.closest('.auth')||el.closest('.phone')||el.parentElement.classList.contains('snap')||seen.has(el))return;seen.add(el);const sib=[...el.parentElement.children].indexOf(el);el.style.setProperty('--d',Math.min(sib,5)*.09+'s');el.classList.add('rv');if(el.matches('.collage>*,.people>*,.phone-col'))el.classList.add('zoom');io.observe(el)})});
+})();
 </script>
+
+</body>
+</html>
